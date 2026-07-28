@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dishes Cards</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-4">
+  <div class="row" id="cardContainer"></div>
+</div>
+
+<script>
+  // Array of objects
+  const dishes = [
+    {
+      name: "Pizza",
+      price: 299,
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_dnDIbtiD7pXY2BcnaXupVVPC2rcE4IY_NmIaGwtiSw&s=10"
+    },
+    {
+      name: "Burger",
+      price: 199,
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ99CL3ZFv2IX_hhVTxMA720lPcY_265CDI9AgdZzYvfw&s=10"
+    },
+    {
+      name: "Pasta",
+      price: 249,
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_Du39Coztmc4zlSJGok0bOuulRxjslHiPcV6eGVLbig&s=10"
+    },
+    {
+      name: "Biryani",
+      price: 349,
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpXIYTh_6wWe2HbtZfGdZ0Gs5COnQDcYHpR8pmUv4ICA&s=10"
+    }
+  ];
+
+  const container = document.getElementById("cardContainer");
+
+  dishes.map((dish) => {
+    container.innerHTML += `
+      <div class="col-md-3 mb-4">
+        <div class="card h-100">
+          <img src="${dish.image}" class="card-img-top" alt="${dish.name}">
+          <div class="card-body">
+            <h5 class="card-title">${dish.name}</h5>
+            <p class="card-text">Price: ₹${dish.price}</p>
+            <button class="btn btn-primary">Order Now</button>
+          </div>
+        </div>
+      </div>
+    `;
+  });
+</script>
+
+</body>
+</html>
