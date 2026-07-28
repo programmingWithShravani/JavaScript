@@ -1,0 +1,45 @@
+
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        button,
+        input,
+        select {
+            margin: 10px 0;
+            padding: 10px;
+        }
+
+        #box {
+            width: 250px;
+            height: 120px;
+            background-color: lightblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+            border: 2px solid black;
+        }
+
+        #parent {
+            background: lightgreen;
+            padding: 30px;
+            margin-top: 20px;
+        }
+
+        #child {
+            padding: 10px 20px;
+        }
+
+        #content {
+            margin-top: 20px;
+        }
+
+        #warning {
+            display: none;
+            color: red;
+            font-size: 22px;
+            font-weight: bold;
+        }
+    
