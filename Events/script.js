@@ -1,3 +1,4 @@
+
 // Click Event
 // Executes when button is clicked
 
@@ -113,10 +114,40 @@ focusInput.style.background="white";
 // Stops opening Google
 
 const link=document.getElementById("link");
-
 link.addEventListener("click",function(e){
-
 e.preventDefault();
 alert("Navigation Blocked");
 });
 
+// Disable right click 
+
+document.addEventListener("contextmenu", e => e.preventDefault()); 
+
+// Disable copy, cut, paste
+
+["copy", "cut", "paste"].forEach(eventName => {     document.addEventListener(eventName, e => e.preventDefault()); }); 
+
+// Disable text selection 
+
+ document.addEventListener("selectstart", e => e.preventDefault()); 
+
+ // Disable dragging
+
+ document.addEventListener("dragstart", e => e.preventDefault()); 
+
+ // Block common shortcuts 
+
+ document.addEventListener("keydown", e => {    
+      if (e.key === "F12")
+         {        
+             e.preventDefault();    
+         }      
+             if (e.ctrlKey && e.shiftKey &&  ["i", "j", "c"].includes(e.key.toLowerCase())) 
+                {         
+                    e.preventDefault();   
+                }   
+            if (e.ctrlKey &&  ["u", "c", "x", "s", "a"].includes(e.key.toLowerCase()))
+                 {       
+                     e.preventDefault();    
+                   } 
+    }); 
