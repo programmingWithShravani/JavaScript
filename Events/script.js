@@ -1,293 +1,122 @@
 // Click Event
+// Executes when button is clicked
 
-document.getElementById("clickBtn");
-clickBtn.addEventListener("click", function ()
- {
+const clickBtn=document.getElementById("clickBtn");
 
-    alert("Welcome to  my website");
+clickBtn.addEventListener("click",function(){
+
+alert("Button Clicked");
 
 });
 
 // Double Click Event
+// Executes when button is double clicked
 
-document.getElementById("dblBtn");
-dblBtn.addEventListener("dblclick", function () 
-{
+const dblBtn=document.getElementById("dblBtn");
 
-    alert("Double Click");
+dblBtn.addEventListener("dblclick",function(){
 
-});
-
-// Mouseover Event
-
-const box = document.getElementById("box");
-
-box.addEventListener("mouseover", function () {
-
-    // Change background when mouse enters
-
-    box.style.backgroundColor = "orange";
-
-    console.log("Mouse Entered");
-
-});
-
-// Mouseout Event
-
-box.addEventListener("mouseout", function () {
-
-    // Restore background when mouse leaves
-
-    box.style.backgroundColor = "lightblue";
-
-    console.log("Mouse Left");
+alert("Double Click");
 
 });
 
 
-// Mousemove Event
+// Mouse Events
 
-document.addEventListener("mousemove", function (event) {
+const box=document.getElementById("box");
 
-    // Display mouse coordinates
+// Mouse enters
+box.addEventListener("mouseover",function(){
 
-    console.log("X:", event.clientX, "Y:", event.clientY);
-
-});
-
-// Keydown Event
-
-const input = document.getElementById("textInput");
-
-input.addEventListener("keydown", function (event) {
-
-    // Detect pressed key
-
-    console.log("Key Down :", event.key);
+box.style.background="green";
+console.log("Mouse Entered");
 
 });
 
-// Keyup Event
+// Mouse leaves
+box.addEventListener("mouseout",function(){
 
-input.addEventListener("keyup", function (event) {
+box.style.background="orange";
+console.log("Mouse Left");
 
-    // Detect released key
+});
 
-    console.log("Key Up :", event.key);
+// Mouse moves
+box.addEventListener("mousemove",function(event){
 
+console.log(event.clientX,event.clientY);
+
+});
+
+// Keyboard Events
+
+
+const keyboard=document.getElementById("keyboard");
+
+// Key Pressed
+keyboard.addEventListener("keydown",function(event){
+console.log("Key Down :",event.key);
+});
+
+// Key Released
+keyboard.addEventListener("keyup",function(event){
+console.log("Key Up :",event.key);
 });
 
 // Input Event
+// Runs whenever user types
 
-input.addEventListener("input", function () {
-
-    // Show live typing
-
-    document.getElementById("displayText").innerHTML = input.value;
-
+const liveInput=document.getElementById("liveInput");
+const output=document.getElementById("output");
+liveInput.addEventListener("input",function(){
+output.innerHTML=liveInput.value;
 });
+
 
 // Change Event
+// Runs after selection changes
 
-document.getElementById("city").addEventListener("change", function () {
+const city=document.getElementById("city");
+city.addEventListener("change",function(){
+alert("Selected : "+city.value);
+});
 
-    // Display selected city
+// Submit Event
+// Prevent page refresh
 
-    alert(this.value);
+const form=document.getElementById("form");
+form.addEventListener("submit",function(e){
+e.preventDefault();
+alert("Form Submitted");
 
 });
 
+
 // Focus Event
+// Input gets focus
 
-input.addEventListener("focus", function () {
-
-    // Highlight input field
-
-    input.style.backgroundColor = "yellow";
-
+const focusInput=document.getElementById("focusInput");
+focusInput.addEventListener("focus",function(){
+focusInput.style.background="yellow";
 });
 
 // Blur Event
+// Input loses focus
 
-input.addEventListener("blur", function () {
-
-    // Restore background
-
-    input.style.backgroundColor = "white";
+focusInput.addEventListener("blur",function(){
+focusInput.style.background="white";
 
 });
 
-
-// Submit Event
-
-
-document.getElementById("myForm").addEventListener("submit", function (event) {
-
-    // Prevent page refresh
-
-    event.preventDefault();
-
-    alert("Form Submitted Successfully");
-
-});
-
-
-// Load Event
-
-window.addEventListener("load", function () {
-
-    console.log("Website Loaded");
-
-});
-
-// Scroll Event
-
-window.addEventListener("scroll", function () {
-
-    // Display scroll position
-
-    document.getElementById("scrollValue").innerHTML =
-        "Scroll Position : " + window.scrollY;
-
-});
-
-// Resize Event
-
-window.addEventListener("resize", function () {
-
-    // Display current width
-
-    console.log("Window Width :", window.innerWidth);
-
-});
-
-// Event Bubbling
-
-document.getElementById("parent").addEventListener("click", function () {
-
-    console.log("Parent Clicked");
-
-});
-
-document.getElementById("child").addEventListener("click", function () {
-
-    console.log("Child Clicked");
-
-});
 
 // preventDefault()
+// Stops opening Google
 
-document.getElementById("googleLink").addEventListener("click", function (event) {
+const link=document.getElementById("link");
 
-    // Stop opening Google
+link.addEventListener("click",function(e){
 
-    event.preventDefault();
-
-    alert("Navigation Blocked");
-
+e.preventDefault();
+alert("Navigation Blocked");
 });
 
-// Website Protection
-
-
-// Disable right click
-
-document.addEventListener("contextmenu", function (event) {
-
-    event.preventDefault();
-
-});
-
-// Disable copy
-
-document.addEventListener("copy", function (event) {
-
-    event.preventDefault();
-
-});
-
-// Disable cut
-
-document.addEventListener("cut", function (event) {
-
-    event.preventDefault();
-
-});
-
-// Disable paste
-
-document.addEventListener("paste", function (event) {
-
-    event.preventDefault();
-
-});
-
-// Disable text selection
-
-document.addEventListener("selectstart", function (event) {
-
-    event.preventDefault();
-
-});
-
-// Disable dragging
-
-document.addEventListener("dragstart", function (event) {
-
-    event.preventDefault();
-
-});
-
-// Disable F12 and common shortcuts
-
-document.addEventListener("keydown", function (event) {
-
-    if (event.key === "F12") {
-
-        event.preventDefault();
-
-    }
-
-    if (event.ctrlKey &&
-        ["u", "c", "x", "s", "a"].includes(event.key.toLowerCase())) {
-
-        event.preventDefault();
-
-    }
-
-    if (event.ctrlKey &&
-        event.shiftKey &&
-        ["i", "j", "c"].includes(event.key.toLowerCase())) {
-
-        event.preventDefault();
-
-    }
-
-});
-
-// Laptop/Desktop Checking
-
-
-function checkScreen() {
-
-    if (window.innerWidth < 992) {
-
-        document.getElementById("content").style.display = "none";
-
-        document.getElementById("warning").style.display = "block";
-
-    }
-
-    else {
-
-        document.getElementById("content").style.display = "block";
-
-        document.getElementById("warning").style.display = "none";
-
-    }
-
-}
-
-checkScreen();
-
-window.addEventListener("resize", checkScreen);
