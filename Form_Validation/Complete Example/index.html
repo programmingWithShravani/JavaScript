@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login & Registration Form</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial;
+      }
+      body {
+        background: #f2f2f2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 30px;
+      }
+      .container {
+        width: 450px;
+        background: white;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+      }
+      button {
+        width: 100%;
+        padding: 12px;
+        background: green;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 18px;
+      }
+      button:hover {
+        background: darkgreen;
+      }
+      .error {
+        color: red;
+        font-size: 14px;
+      }
+      .radio,
+      .checkbox {
+        display: flex;
+        gap: 15px;
+        margin: 10px 0;
+      }
+      .radio label,
+      .checkbox label {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Registration Form</h2>
+      <form id="registerForm">
+        <input type="text" id="fname" placeholder="First Name" />
+        <input type="text" id="lname" placeholder="Last Name" />
+        <input type="text" id="username" placeholder="Username" />
+        <input type="text" id="email" placeholder="Email" />
+        <input type="text" id="mobile" placeholder="Mobile Number" />
+        <input type="password" id="password" placeholder="Password" />
+        <input type="password" id="confirm" placeholder="Confirm Password" />
+        <div class="radio">
+          <label>
+            <input type="radio" name="gender" value="Male" /> Male
+          </label>
+          <label>
+            <input type="radio" name="gender" value="Female" /> Female
+          </label>
+        </div>
+        <input type="date" id="dob" />
+        <select id="country">
+          <option value="">Select Country</option>
+          <option>India</option>
+          <option>USA</option>
+          <option>Canada</option>
+          <option>Australia</option>
+        </select>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" class="hobby" value="Reading" /> Reading
+          </label>
+          <label>
+            <input type="checkbox" class="hobby" value="Coding" /> Coding
+          </label>
+          <label>
+            <input type="checkbox" class="hobby" value="Sports" /> Sports
+          </label>
+        </div>
+        <textarea id="address" placeholder="Address"></textarea>
+        <label>
+          <input type="checkbox" id="terms" /> Accept Terms & Conditions
+        </label>
+        <br /><br />
+        <button type="submit">Register</button>
+      </form>
+      <hr style="margin: 30px 0" />
+      <h2>Login Form</h2>
+      <form id="loginForm">
+        <input type="text" id="loginEmail" placeholder="Email" />
+        <input type="password" id="loginPassword" placeholder="Password" />
+        <button type="submit">Login</button>
+      </form>
+    </div>
+    <script src="/Form_Validation/Complete Example/script.js"></script>
+  </body>
+</html>
